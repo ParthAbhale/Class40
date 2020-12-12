@@ -5,8 +5,9 @@ class Form {
     this.button = createButton('Play');
     this.greeting = createElement('h2');
     this.title = createElement('h2');
+    this.reset = createButton("Reset")
   }
-  hide(){
+  hide_details(){
     this.greeting.hide();
     this.button.hide();
     this.input.hide();
@@ -19,7 +20,13 @@ class Form {
 
     this.input.position(displayWidth/2 - 40 , displayHeight/2 - 80);
     this.button.position(displayWidth/2 + 30, displayHeight/2);
-2
+
+    this.reset.position(displayWidth-100,50)
+    this.reset.mousePressed(()=>{
+       player.updateCount(0)
+       game.update(0)
+    })
+
     this.button.mousePressed(()=>{
       this.input.hide();
       this.button.hide();
